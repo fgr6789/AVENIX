@@ -12,52 +12,119 @@
 <body>
   <div class="ambient"></div>
   <header class="topbar">
-    <div class="brand">
+    <a class="brand" href="./" aria-label="AVENIX GPLAY — главная">
       <div class="brand-mark"><span>A</span><i>▶</i></div>
       <div><strong>AVENIX</strong><small>GPLAY</small></div>
-    </div>
+    </a>
+    <nav class="main-nav" aria-label="Разделы">
+      <button class="nav-btn active" data-view="home">ГЛАВНАЯ</button>
+      <button class="nav-btn" data-view="games">GAMES</button>
+    </nav>
     <div class="top-status"><span class="live-dot"></span> СИСТЕМА ГОТОВА</div>
   </header>
 
   <main>
-    <section class="welcome">
-      <div class="eyebrow">ТВОЯ РАЗВЛЕКАТЕЛЬНАЯ СИСТЕМА</div>
-      <h1>Добро пожаловать<br><em>в AVENIX GPLAY</em></h1>
-      <p>Фильмы, видео и развлечения — в одном месте.</p>
+    <section id="homeView" class="view">
+      <section class="welcome">
+        <div class="eyebrow">ТВОЯ РАЗВЛЕКАТЕЛЬНАЯ СИСТЕМА</div>
+        <h1>Добро пожаловать<br><em>в AVENIX GPLAY</em></h1>
+        <p>Фильмы, видео и развлечения — в одном месте.</p>
+      </section>
+      <section class="section">
+        <div class="section-head"><h2>БЫСТРЫЙ ЗАПУСК</h2><span>ВЫБЕРИ ПЛИТКУ</span></div>
+        <div class="tiles" id="tiles">
+          <button class="tile featured" data-url="https://www.youtube.com/tv">
+            <div class="tile-icon youtube">▶</div><b>YouTube</b><small>Видео и каналы</small>
+          </button>
+          <button class="tile" data-url="https://www.kinopoisk.ru/">
+            <div class="tile-icon kino">К</div><b>Кинопоиск</b><small>Фильмы и сериалы</small>
+          </button>
+          <button class="tile" data-url="https://rutube.ru/">
+            <div class="tile-icon rutube">R</div><b>RUTUBE</b><small>Видео</small>
+          </button>
+          <button class="tile" data-view="games">
+            <div class="tile-icon games">✦</div><b>Игры</b><small>Браузерный каталог</small>
+          </button>
+          <button class="tile" data-action="assistant">
+            <div class="tile-icon assistant">✧</div><b>Помощник</b><small>Готовится к запуску</small>
+          </button>
+        </div>
+      </section>
+      <section class="bottom-panel">
+        <div>
+          <div class="eyebrow">AVENIX • WEB EDITION</div>
+          <h3>Создано для большого экрана.</h3>
+          <p>Используй стрелки пульта и кнопку OK для навигации.</p>
+        </div>
+        <div class="remote-hint"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>OK</kbd></div>
+      </section>
     </section>
 
-    <section class="section">
-      <div class="section-head"><h2>БЫСТРЫЙ ЗАПУСК</h2><span>ВЫБЕРИ ПЛИТКУ</span></div>
-      <div class="tiles" id="tiles">
-        <button class="tile featured" data-url="https://www.youtube.com/tv">
-          <div class="tile-icon youtube">▶</div><b>YouTube</b><small>Видео и каналы</small>
-        </button>
-        <button class="tile" data-url="https://www.kinopoisk.ru/">
-          <div class="tile-icon kino">К</div><b>Кинопоиск</b><small>Фильмы и сериалы</small>
-        </button>
-        <button class="tile" data-url="https://rutube.ru/">
-          <div class="tile-icon rutube">R</div><b>RUTUBE</b><small>Видео</small>
-        </button>
-        <button class="tile" data-action="games">
-          <div class="tile-icon games">✦</div><b>Игры</b><small>Раздел в разработке</small>
-        </button>
-        <button class="tile" data-action="assistant">
-          <div class="tile-icon assistant">✧</div><b>Помощник</b><small>Голосовой раздел</small>
-        </button>
-      </div>
-    </section>
+    <section id="gamesView" class="view hidden">
+      <section class="games-hero">
+        <div>
+          <div class="eyebrow">AVENIX ARCADE • WEB GAMES</div>
+          <h1>ИГРАЙ <em>ПРЯМО В БРАУЗЕРЕ</em></h1>
+          <p>Выбирай игру — она откроется на игровом сайте без установки.</p>
+        </div>
+        <div class="game-count"><strong id="gameCount">8</strong><span>ИГР В КАТАЛОГЕ</span></div>
+      </section>
 
-    <section class="bottom-panel">
-      <div>
-        <div class="eyebrow">AVENIX • WEB EDITION</div>
-        <h3>Создано для большого экрана.</h3>
-        <p>Используй стрелки пульта и кнопку OK для навигации.</p>
-      </div>
-      <div class="remote-hint"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>OK</kbd></div>
+      <section class="section">
+        <div class="game-tools">
+          <label class="search-wrap">
+            <span>⌕</span>
+            <input id="gameSearch" type="search" placeholder="Найти игру..." autocomplete="off">
+          </label>
+          <div class="category-row" id="categories">
+            <button class="category active" data-category="all">ВСЕ</button>
+            <button class="category" data-category="runner">РАННЕРЫ</button>
+            <button class="category" data-category="racing">ГОНКИ</button>
+            <button class="category" data-category="puzzle">ГОЛОВОЛОМКИ</button>
+            <button class="category" data-category="arcade">АРКАДЫ</button>
+          </div>
+        </div>
+        <div class="section-head"><h2>КАТАЛОГ ИГР</h2><span>НАЖМИ OK ДЛЯ ЗАПУСКА</span></div>
+        <div class="game-grid" id="gameGrid">
+          <button class="game-card" data-category="runner" data-search="subway surfers раннер серферы" data-url="https://poki.com/ru/g/subway-surfers">
+            <span class="game-art art-subway"><b>SS</b><i>🏃</i></span><span class="game-info"><b>Subway Surfers</b><small>Раннер • Poki</small></span><span class="play-tag">ИГРАТЬ ↗</span>
+          </button>
+          <button class="game-card" data-category="runner" data-search="temple run 2 храм раннер" data-url="https://poki.com/en/g/temple-run-2">
+            <span class="game-art art-temple"><b>TR</b><i>🏛️</i></span><span class="game-info"><b>Temple Run 2</b><small>Раннер • Poki</small></span><span class="play-tag">ИГРАТЬ ↗</span>
+          </button>
+          <button class="game-card" data-category="racing" data-search="moto x3m мотоцикл гонки" data-url="https://poki.com/en/g/moto-x3m">
+            <span class="game-art art-moto"><b>MX</b><i>🏍️</i></span><span class="game-info"><b>Moto X3M</b><small>Гонки • Poki</small></span><span class="play-tag">ИГРАТЬ ↗</span>
+          </button>
+          <button class="game-card" data-category="puzzle" data-search="2048 числа логика" data-url="https://poki.com/en/g/2048">
+            <span class="game-art art-2048"><b>2048</b><i>🔢</i></span><span class="game-info"><b>2048</b><small>Головоломка • Poki</small></span><span class="play-tag">ИГРАТЬ ↗</span>
+          </button>
+          <button class="game-card" data-category="arcade" data-search="drive mad автомобиль аркада" data-url="https://poki.com/en/g/drive-mad">
+            <span class="game-art art-drive"><b>DM</b><i>🚙</i></span><span class="game-info"><b>Drive Mad</b><small>Аркада • Poki</small></span><span class="play-tag">ИГРАТЬ ↗</span>
+          </button>
+          <button class="game-card" data-category="arcade" data-search="stickman hook человечек крюк" data-url="https://poki.com/en/g/stickman-hook">
+            <span class="game-art art-stick"><b>SH</b><i>🪝</i></span><span class="game-info"><b>Stickman Hook</b><small>Аркада • Poki</small></span><span class="play-tag">ИГРАТЬ ↗</span>
+          </button>
+          <button class="game-card" data-category="arcade" data-search="monkey mart магазин обезьянка" data-url="https://poki.com/en/g/monkey-mart">
+            <span class="game-art art-monkey"><b>MM</b><i>🐵</i></span><span class="game-info"><b>Monkey Mart</b><small>Аркада • Poki</small></span><span class="play-tag">ИГРАТЬ ↗</span>
+          </button>
+          <button class="game-card" data-category="puzzle" data-search="bubble shooter пузыри шарики" data-url="https://poki.com/en/g/bubble-shooter">
+            <span class="game-art art-bubble"><b>BS</b><i>🫧</i></span><span class="game-info"><b>Bubble Shooter</b><small>Головоломка • Poki</small></span><span class="play-tag">ИГРАТЬ ↗</span>
+          </button>
+        </div>
+        <div id="noGames" class="empty-state hidden">Ничего не найдено. Попробуй другое название.</div>
+      </section>
+      <section class="bottom-panel game-note">
+        <div>
+          <div class="eyebrow">ВАЖНО</div>
+          <h3>Игры запускаются на своих сайтах.</h3>
+          <p>Для возврата в AVENIX нажми «Назад» на пульте. Некоторые игры могут не поддерживать управление пультом или этот браузер.</p>
+        </div>
+        <button class="back-home" data-view="home">← НА ГЛАВНУЮ</button>
+      </section>
     </section>
   </main>
 
-  <footer><span>AVENIX GPLAY</span><span>ВЕРСИЯ 1.0 • WEB</span></footer>
+  <footer><span>AVENIX GPLAY</span><span>WEB EDITION 2.0</span></footer>
   <div class="toast" id="toast" role="status"></div>
   <script src="app.js"></script>
 </body>
