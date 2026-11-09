@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d0b">
+  <title>AVENIX GPLAY</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient"></div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark"><span>A</span><i>▶</i></div>
+      <div><strong>AVENIX</strong><small>GPLAY</small></div>
+    </div>
+    <div class="top-status"><span class="live-dot"></span> СИСТЕМА ГОТОВА</div>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <div class="eyebrow">ТВОЯ РАЗВЛЕКАТЕЛЬНАЯ СИСТЕМА</div>
+      <h1>Добро пожаловать<br><em>в AVENIX GPLAY</em></h1>
+      <p>Фильмы, видео и развлечения — в одном месте.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>БЫСТРЫЙ ЗАПУСК</h2><span>ВЫБЕРИ ПЛИТКУ</span></div>
+      <div class="tiles" id="tiles">
+        <button class="tile featured" data-url="https://www.youtube.com/tv">
+          <div class="tile-icon youtube">▶</div><b>YouTube</b><small>Видео и каналы</small>
+        </button>
+        <button class="tile" data-url="https://www.kinopoisk.ru/">
+          <div class="tile-icon kino">К</div><b>Кинопоиск</b><small>Фильмы и сериалы</small>
+        </button>
+        <button class="tile" data-url="https://rutube.ru/">
+          <div class="tile-icon rutube">R</div><b>RUTUBE</b><small>Видео</small>
+        </button>
+        <button class="tile" data-action="games">
+          <div class="tile-icon games">✦</div><b>Игры</b><small>Раздел в разработке</small>
+        </button>
+        <button class="tile" data-action="assistant">
+          <div class="tile-icon assistant">✧</div><b>Помощник</b><small>Голосовой раздел</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="bottom-panel">
+      <div>
+        <div class="eyebrow">AVENIX • WEB EDITION</div>
+        <h3>Создано для большого экрана.</h3>
+        <p>Используй стрелки пульта и кнопку OK для навигации.</p>
+      </div>
+      <div class="remote-hint"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>OK</kbd></div>
+    </section>
+  </main>
+
+  <footer><span>AVENIX GPLAY</span><span>ВЕРСИЯ 1.0 • WEB</span></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
